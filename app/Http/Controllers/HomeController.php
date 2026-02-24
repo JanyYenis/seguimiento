@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ErrorException;
 use App\Models\Proyecto;
 use App\Models\Usuario;
 use Illuminate\Http\Request;

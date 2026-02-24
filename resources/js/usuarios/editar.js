@@ -1,6 +1,6 @@
 "use strict";
 
-// rutas 
+// rutas
 const rutaEditar = "usuarios.edit";
 
 // id y clases
@@ -76,7 +76,8 @@ const iniciarComponentes = (form = "") => {
     // Init Select2 --- more info: https://select2.org/
     $(`${form} #selectPaisEdit`).select2({
         templateSelection: optionFormat,
-        templateResult: optionFormat
+        templateResult: optionFormat,
+        dropdownParent: $(`${form}`), // 👈 muy importante
     });
 
     $(document).on('change', `${form} #selectPaisEdit`, function(){
@@ -123,7 +124,7 @@ const enviarDatos = (form) => {
     formData.set('telefono', tel);
     formData.set('codigo_tel', codigo);
     formData.set('nombre_tel', nombre_tel);
-    
+
     const config = {
         'method': 'PUT',
         'headers': {

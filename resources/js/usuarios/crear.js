@@ -48,7 +48,8 @@ const iniciarComponentes = (form = "") => {
     // Init Select2 --- more info: https://select2.org/
     $(`${form} #selectPais`).select2({
         templateSelection: optionFormat,
-        templateResult: optionFormat
+        templateResult: optionFormat,
+        dropdownParent: $(`${form}`), // 👈 muy importante
     });
 
     $(document).on('change', `${form} #selectPais`, function(){
